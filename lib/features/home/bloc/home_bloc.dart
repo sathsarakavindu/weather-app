@@ -19,7 +19,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       WeatherLoadingState(),
     );
 
-    WeatherData weatherValue = await FetchWeather().fetchWeatherData("kandy");
+    WeatherData weatherValue = await FetchWeather().fetchWeatherData("colombo");
 
     emit(WeatherSuccessState(weatherData: weatherValue));
   }

@@ -4,4 +4,7 @@ class AppConfig {
 
   static String windIcon = "assets/Icons/ic_wind.png";
   static String humadityIcon = "assets/Icons/ic_humidity.png";
+  static String sunnyGiff = "assets/giffs/gf_sunny.gif";
+  static String partlyCloudyGiff = "assets/giffs/gf_partly_cloudy.gif";
+  static String rainyGiff = "assets/giffs/gf_rainy.gif";
 }
