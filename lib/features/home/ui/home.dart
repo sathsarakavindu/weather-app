@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 celcius: success.weatherData.celcius.toString(),
                 wind: success.weatherData.wind_kph.toString(),
                 humidity: success.weatherData.humidity.toString(),
+                are: success.weatherData.area,
               );
             default:
               return SizedBox();

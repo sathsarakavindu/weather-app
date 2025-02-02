@@ -3,19 +3,23 @@ class WeatherData {
   final double fahrenheit;
   final double wind_kph;
   final int humidity;
+  final String area;
+  final String weather_status;
   WeatherData(
       {required this.celcius,
       required this.fahrenheit,
       required this.wind_kph,
-      required this.humidity});
+      required this.humidity,
+      required this.area,
+      required this.weather_status});
 
   factory WeatherData.fromJson(Map<String, dynamic> jsonData) {
-    print(jsonData['temp_c']);
-    print(jsonData['temp_f']);
     return WeatherData(
-        celcius: jsonData['temp_c'],
-        fahrenheit: jsonData['temp_f'],
-        wind_kph: jsonData['wind_kph'],
-        humidity: jsonData['humidity']);
+        celcius: jsonData['current']['temp_c'],
+        fahrenheit: jsonData['current']['temp_f'],
+        wind_kph: jsonData['current']['wind_kph'],
+        humidity: jsonData['current']['humidity'],
+        area: jsonData['location']['name'],
+        weather_status: jsonData['current']['condition']['text']);
   }
 }

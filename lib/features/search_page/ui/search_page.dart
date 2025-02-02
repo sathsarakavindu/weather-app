@@ -7,11 +7,13 @@ class SearchPage extends StatefulWidget {
   String celcius;
   String wind;
   String humidity;
+  String are;
   SearchPage(
       {super.key,
       required this.celcius,
       required this.wind,
-      required this.humidity});
+      required this.humidity,
+      required this.are});
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -137,7 +139,7 @@ class _SearchPageState extends State<SearchPage> {
                         children: [
                           Center(
                             child: Text(
-                              "Colombo",
+                              "${success.weatherData.area}",
                               textAlign: TextAlign.center,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18),
