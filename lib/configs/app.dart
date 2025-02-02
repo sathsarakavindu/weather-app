@@ -7,4 +7,6 @@ class AppConfig {
   static String sunnyGiff = "assets/giffs/gf_sunny.gif";
   static String partlyCloudyGiff = "assets/giffs/gf_partly_cloudy.gif";
   static String rainyGiff = "assets/giffs/gf_rainy.gif";
+  static String clearNightGiff = "assets/giffs/gf_clear_night.gif";
+  static String overcastGiff = "assets/giffs/gf_overcast.gif";
 }

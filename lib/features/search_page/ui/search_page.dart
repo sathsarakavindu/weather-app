@@ -135,7 +135,13 @@ class _SearchPageState extends State<SearchPage> {
                               : success.weatherData.weather_status ==
                                       "Patchy rain nearby"
                                   ? AppConfig.rainyGiff
-                                  : AppConfig.rainyGiff),
+                                  : success.weatherData.weather_status ==
+                                          "Clear"
+                                      ? AppConfig.clearNightGiff
+                                      : success.weatherData.weather_status ==
+                                              "Overcast"
+                                          ? AppConfig.overcastGiff
+                                          : AppConfig.overcastGiff),
                       SizedBox(
                         height: 30,
                       ),
@@ -311,7 +317,11 @@ class _SearchPageState extends State<SearchPage> {
                               ? AppConfig.partlyCloudyGiff
                               : widget.status == "Patchy rain nearby"
                                   ? AppConfig.rainyGiff
-                                  : AppConfig.rainyGiff),
+                                  : widget.status == "Clear"
+                                      ? AppConfig.clearNightGiff
+                                      : widget.status == "Overcast"
+                                          ? AppConfig.overcastGiff
+                                          : AppConfig.overcastGiff),
                       SizedBox(
                         height: 30,
                       ),
