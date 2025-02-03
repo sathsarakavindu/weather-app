@@ -15,9 +15,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> weatherInitialEvent(
       WeatherInitialEvent event, Emitter<HomeState> emit) async {
-    emit(
-      WeatherLoadingState(),
-    );
+    emit(WeatherLoadingState());
 
     WeatherData weatherValue = await FetchWeather().fetchWeatherData("colombo");
 

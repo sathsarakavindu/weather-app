@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:weather/configs/app.dart';
 import 'package:weather/features/home/bloc/home_bloc.dart';
 import 'package:weather/features/search_page/ui/search_page.dart';
 import 'package:weather/repositories/fetch_weather.dart';
@@ -48,8 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context, state) {
           switch (state.runtimeType) {
             case WeatherLoadingState:
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Container(
+                color: Color(0xFF9DD1FA),
+                child: Center(
+                  child: Image.asset(AppConfig.loadingGiff),
+                ),
               );
             case WeatherSuccessState:
               final success = state as WeatherSuccessState;
