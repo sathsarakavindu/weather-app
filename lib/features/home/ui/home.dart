@@ -6,7 +6,7 @@ import 'package:weather/features/home/bloc/home_bloc.dart';
 import 'package:weather/features/search_page/ui/search_page.dart';
 import 'package:weather/repositories/fetch_weather.dart';
 import 'package:weather/repositories/location.dart';
-
+import 'package:intl/intl.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -39,6 +39,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+        // Get current date
+    DateTime now = DateTime.now();
+
+    // Format: "Sun, 2 February"
+    String formattedDate = DateFormat('EEE, d MMMM').format(now);
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(

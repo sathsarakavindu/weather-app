@@ -91,10 +91,14 @@ class _SearchPageState extends State<SearchPage> {
                           decoration: InputDecoration(
                             prefixIcon: IconButton(
                               onPressed: () {
-                                searchBloc.add(
-                                  SearchInitialTextEvent(
-                                      search_text: seatch_txt ?? ""),
-                                );
+                                if (searchController.text.isNotEmpty) {
+                                  searchBloc.add(
+                                    SearchInitialTextEvent(
+                                        search_text: seatch_txt ?? ""),
+                                  );
+                                } else {
+                                  return;
+                                }
                               },
                               icon: Icon(Icons.search),
                             ),
@@ -275,10 +279,14 @@ class _SearchPageState extends State<SearchPage> {
                           decoration: InputDecoration(
                             prefixIcon: IconButton(
                               onPressed: () {
-                                searchBloc.add(
-                                  SearchInitialTextEvent(
-                                      search_text: seatch_txt ?? ""),
-                                );
+                                if (searchController.text.isNotEmpty) {
+                                  searchBloc.add(
+                                    SearchInitialTextEvent(
+                                        search_text: seatch_txt ?? ""),
+                                  );
+                                } else {
+                                  return;
+                                }
                               },
                               icon: Icon(Icons.search),
                             ),
@@ -304,7 +312,7 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         child: Center(
                             child: Text(
-                          "Sun, 2 February",
+                          "${formattedDate}",
                           style: TextStyle(color: Colors.white),
                         )),
                       ),

@@ -15,11 +15,12 @@ class WeatherData {
 
   factory WeatherData.fromJson(Map<String, dynamic> jsonData) {
     return WeatherData(
-        celcius: jsonData['current']['temp_c'],
-        fahrenheit: jsonData['current']['temp_f'],
-        wind_kph: jsonData['current']['wind_kph'],
-        humidity: jsonData['current']['humidity'],
-        area: jsonData['location']['name'],
-        weather_status: jsonData['current']['condition']['text']);
+      celcius: jsonData['current']['temp_c'] ?? "0",
+      fahrenheit: jsonData['current']['temp_f'] ?? "0",
+      wind_kph: jsonData['current']['wind_kph'] ?? "0",
+      humidity: jsonData['current']['humidity'] ?? "0",
+      area: jsonData['location']['name'] ?? "0",
+      weather_status: jsonData['current']['condition']['text'] ?? "0",
+    );
   }
 }
